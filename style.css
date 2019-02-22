@@ -1349,6 +1349,13 @@ p.entry-meta {
 
 .entry-header .entry-meta {
   margin-bottom: 20px;
+  color: gray;
+  font-size: 0.9rem;
+}
+.entry-header .entry-meta a {
+  text-decoration: none;
+  color: gray;
+  border-bottom: 1px dashed gray;
 }
 
 .entry-footer .entry-meta {

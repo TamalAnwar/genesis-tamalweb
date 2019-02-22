@@ -207,7 +207,17 @@ add_action( 'genesis_header', 'genesis_do_nav', 12 );
 
 // Repositions the secondary navigation menu.
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-add_action( 'genesis_footer', 'genesis_do_subnav', 10 );
+add_action( 'genesis_footer', 'genesis_do_subnav', 13 );
+
+// Custom footer text
+//* Change the footer text
+add_filter('genesis_footer_creds_text', 'sp_footer_creds_filter');
+function sp_footer_creds_filter( $creds ) {
+	$creds = 'External links — <a rel="noreferrer noopener" aria-label="Twitter (opens in a new tab)" href="https://twitter.com/TamalAnwar" target="_blank">Twitter</a> ᛫ <a href="https://medium.com/@TamalAnwar" target="_blank" rel="noreferrer noopener" aria-label="Medium (opens in a new tab)">Medium</a> ᛫ <a rel="noreferrer noopener" aria-label="Linkedin (opens in a new tab)" href="https://www.linkedin.com/in/tamalanwar/" target="_blank">Linkedin</a> ᛫ <a rel="noreferrer noopener" aria-label="Github (opens in a new tab)" href="https://github.com/tamalanwar" target="_blank">Github</a>  ';
+	return $creds;
+}
+
+
 
 add_filter( 'wp_nav_menu_args', 'genesis_sample_secondary_menu_args' );
 /**
